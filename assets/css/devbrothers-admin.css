@@ -1,0 +1,886 @@
+/**
+ * DevBrothers Admin Panel Styles
+ * 
+ * @package DevBrothers_Admin_Panel
+ */
+
+/* === Основная структура === */
+.devbrothers-wrapper {
+    display: flex;
+    margin: -20px 0 -20px -2px;
+    min-height: calc(100vh - 32px);
+    background: #f0f0f1;
+}
+
+/* === Левый сайдбар === */
+.devbrothers-sidebar {
+    width: 260px;
+    background: #1e1e1e;
+    color: #fff;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.devbrothers-logo {
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.devbrothers-logo .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #2271b1;
+}
+
+.devbrothers-logo h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.devbrothers-nav {
+    flex: 1;
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+.devbrothers-nav-divider {
+    padding: 20px 20px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+}
+
+.devbrothers-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.devbrothers-nav-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.devbrothers-nav-item.active {
+    background: rgba(34, 113, 177, 0.2);
+    color: #fff;
+    border-left-color: #2271b1;
+}
+
+.devbrothers-nav-item .dashicons {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.devbrothers-nav-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.devbrothers-nav-item-title {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.devbrothers-nav-item-subtitle {
+    font-size: 11px;
+    opacity: 0.6;
+    line-height: 1.3;
+}
+
+/* === Основная область контента === */
+.devbrothers-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 0;
+}
+
+.devbrothers-header {
+    margin-bottom: 40px;
+}
+
+.devbrothers-header-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.devbrothers-logo-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.devbrothers-header-text {
+    flex: 1;
+}
+
+.devbrothers-header h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+.devbrothers-subtitle {
+    margin: 0;
+    font-size: 16px;
+    color: #646970;
+}
+
+/* === Блоки статистики === */
+.devbrothers-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.devbrothers-stat-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.devbrothers-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.devbrothers-stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: #2271b1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.devbrothers-stat-icon-secondary {
+    background: #d63638;
+}
+
+.devbrothers-stat-icon-success {
+    background: #00a32a;
+}
+
+.devbrothers-stat-icon .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #fff;
+}
+
+.devbrothers-stat-content {
+    flex: 1;
+}
+
+.devbrothers-stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e1e1e;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.devbrothers-stat-label {
+    font-size: 14px;
+    color: #646970;
+}
+
+/* === Информационные блоки === */
+.devbrothers-info-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.devbrothers-info-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.devbrothers-info-card-primary {
+    border-top: 4px solid #2271b1;
+}
+
+.devbrothers-info-header {
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.devbrothers-info-header .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #2271b1;
+}
+
+.devbrothers-info-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.devbrothers-info-body {
+    padding: 20px;
+}
+
+.devbrothers-info-body p {
+    margin: 0 0 15px;
+    line-height: 1.6;
+    color: #50575e;
+}
+
+.devbrothers-info-body p:last-child {
+    margin-bottom: 0;
+}
+
+.devbrothers-news-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.devbrothers-news-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.devbrothers-news-list li:last-child {
+    border-bottom: none;
+}
+
+.devbrothers-news-list strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #1e1e1e;
+}
+
+.devbrothers-news-list span {
+    color: #646970;
+    font-size: 14px;
+}
+
+/* === Секции === */
+.devbrothers-section {
+    margin-bottom: 40px;
+}
+
+.devbrothers-section h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.devbrothers-section-description {
+    margin: 0 0 20px;
+    color: #646970;
+}
+
+/* === Сетка плагинов === */
+.devbrothers-plugins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.devbrothers-plugin-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.devbrothers-plugin-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.devbrothers-plugin-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.devbrothers-plugin-icon .dashicons {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+}
+
+.devbrothers-plugin-badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.devbrothers-plugin-badge-org {
+    background: #e5f5fa;
+    color: #0073aa;
+}
+
+.devbrothers-plugin-badge-soon {
+    background: #f0f0f1;
+    color: #646970;
+}
+
+.devbrothers-plugin-badge-github {
+    background: #f0f6fc;
+    color: #24292f;
+}
+
+.devbrothers-plugin-card h3 {
+    margin: 0 0 12px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.devbrothers-plugin-card p {
+    margin: 0 0 20px;
+    color: #646970;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.devbrothers-plugin-card .button {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.devbrothers-plugin-card .button .dashicons {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+}
+
+/* === Список установленных плагинов === */
+.devbrothers-installed-list {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.devbrothers-installed-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.devbrothers-installed-item:last-child {
+    border-bottom: none;
+}
+
+.devbrothers-installed-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1;
+}
+
+.devbrothers-installed-info .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #2271b1;
+    flex-shrink: 0;
+}
+
+.devbrothers-installed-info h4 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.devbrothers-installed-info p {
+    margin: 0;
+    color: #646970;
+    font-size: 14px;
+}
+
+.devbrothers-installed-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.devbrothers-version {
+    color: #646970;
+    font-size: 14px;
+}
+
+/* === Универсальная шапка плагина === */
+.devbrothers-content > .devbrothers-header {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Блок 1: Заголовок плагина */
+.devbrothers-header-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1;
+}
+
+.devbrothers-header-title .dashicons {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: #2271b1;
+    flex-shrink: 0;
+}
+
+.devbrothers-header-title h1 {
+    margin: 0 0 5px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+.devbrothers-header-title-subtitle {
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 0.6;
+    margin-left: 8px;
+}
+
+.devbrothers-subtitle {
+    margin: 0;
+    font-size: 14px;
+    color: #646970;
+}
+
+/* Блок 2: Email поддержки */
+.devbrothers-header-support {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.devbrothers-header-support-email {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2271b1;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.devbrothers-header-support-email:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+.devbrothers-header-support-label {
+    margin: 0;
+    font-size: 12px;
+    color: #646970;
+}
+
+/* === Страница плагина с якорями (под заголовком) === */
+.devbrothers-plugin-page {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.devbrothers-anchors {
+    width: 220px;
+    flex-shrink: 0;
+}
+
+.devbrothers-anchors-sticky {
+    position: sticky;
+    top: 20px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.devbrothers-anchors-sticky h3 {
+    margin: 0 0 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #646970;
+}
+
+.devbrothers-anchors-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.devbrothers-anchor-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    color: #50575e;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.devbrothers-anchor-link:hover {
+    background: #f0f0f1;
+    color: #2271b1;
+}
+
+.devbrothers-anchor-link.active {
+    background: #2271b1;
+    color: #fff;
+}
+
+.devbrothers-anchor-link .dashicons {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+}
+
+.devbrothers-plugin-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.devbrothers-settings-wrapper {
+    margin-top: 0;
+}
+
+/* === Категории настроек === */
+.devbrothers-settings-category {
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    scroll-margin-top: 20px;
+}
+
+.devbrothers-settings-category h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.devbrothers-settings-category h2 .dashicons {
+    color: #2271b1;
+}
+
+/* === Стили для WordPress notices в DevBrothers === */
+.devbrothers-content .notice,
+.devbrothers-settings-wrapper .notice {
+    border: none;
+    border-left: 4px solid #2271b1;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    animation: slideInFromTop 0.3s ease-out;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.devbrothers-content .notice.notice-success,
+.devbrothers-settings-wrapper .notice.notice-success {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-left-color: #00a32a;
+}
+
+.devbrothers-content .notice.notice-error,
+.devbrothers-settings-wrapper .notice.notice-error {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border-left-color: #d63638;
+}
+
+.devbrothers-content .notice.notice-warning,
+.devbrothers-settings-wrapper .notice.notice-warning {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border-left-color: #dba617;
+}
+
+.devbrothers-content .notice.notice-info,
+.devbrothers-settings-wrapper .notice.notice-info {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left-color: #2271b1;
+}
+
+.devbrothers-content .notice p,
+.devbrothers-settings-wrapper .notice p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.devbrothers-content .notice.notice-success p,
+.devbrothers-settings-wrapper .notice.notice-success p {
+    color: #047857;
+}
+
+.devbrothers-content .notice.notice-error p,
+.devbrothers-settings-wrapper .notice.notice-error p {
+    color: #b91c1c;
+}
+
+.devbrothers-content .notice.notice-warning p,
+.devbrothers-settings-wrapper .notice.notice-warning p {
+    color: #92400e;
+}
+
+.devbrothers-content .notice.notice-info p,
+.devbrothers-settings-wrapper .notice.notice-info p {
+    color: #1e40af;
+}
+
+/* Иконки для notices */
+.devbrothers-content .notice p:before,
+.devbrothers-settings-wrapper .notice p:before {
+    font-family: dashicons;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.devbrothers-content .notice.notice-success p:before,
+.devbrothers-settings-wrapper .notice.notice-success p:before {
+    content: "\f147"; /* dashicons-yes-alt */
+    color: #00a32a;
+}
+
+.devbrothers-content .notice.notice-error p:before,
+.devbrothers-settings-wrapper .notice.notice-error p:before {
+    content: "\f534"; /* dashicons-dismiss */
+    color: #d63638;
+}
+
+.devbrothers-content .notice.notice-warning p:before,
+.devbrothers-settings-wrapper .notice.notice-warning p:before {
+    content: "\f227"; /* dashicons-warning */
+    color: #dba617;
+}
+
+.devbrothers-content .notice.notice-info p:before,
+.devbrothers-settings-wrapper .notice.notice-info p:before {
+    content: "\f348"; /* dashicons-info */
+    color: #2271b1;
+}
+
+/* Кнопка закрытия notice */
+.devbrothers-content .notice.is-dismissible,
+.devbrothers-settings-wrapper .notice.is-dismissible {
+    padding-right: 50px;
+    position: relative;
+}
+
+.devbrothers-content .notice.is-dismissible .notice-dismiss,
+.devbrothers-settings-wrapper .notice.is-dismissible .notice-dismiss {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.devbrothers-content .notice.is-dismissible .notice-dismiss:hover,
+.devbrothers-settings-wrapper .notice.is-dismissible .notice-dismiss:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* === Стили для кнопок === */
+/* Кнопка сохранения настроек */
+.devbrothers-content .submit,
+.devbrothers-settings-wrapper .submit {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f1;
+}
+
+.devbrothers-content .submit .button-primary,
+.devbrothers-settings-wrapper .submit .button-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    height: auto;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.devbrothers-content .submit .button-primary .dashicons,
+.devbrothers-settings-wrapper .submit .button-primary .dashicons {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    /* Сбрасываем line-height: 1.9 из ядра WP 7.0 (buttons.css), иначе иконка смещается вниз во flex-кнопке */
+    line-height: 1;
+    margin: 0;
+}
+
+/* Общие стили для кнопок в контексте DevBrothers */
+.devbrothers-content .button,
+.devbrothers-settings-wrapper .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.devbrothers-content .button .dashicons,
+.devbrothers-settings-wrapper .button .dashicons {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    /* Сбрасываем line-height: 1.9 из ядра WP 7.0 (buttons.css), иначе иконка смещается вниз во flex-кнопке */
+    line-height: 1;
+    margin: 0;
+}
+
+/* === "Coming soon" disabled button === */
+.devbrothers-btn-coming-soon {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* === Plugin subtitle in installed list === */
+.devbrothers-installed-subtitle {
+    font-size: 12px;
+    font-weight: normal;
+    opacity: 0.6;
+    margin-left: 6px;
+}
+
+/* === Адаптивность === */
+@media (max-width: 1200px) {
+    .devbrothers-plugin-page {
+        flex-direction: column;
+    }
+    
+    .devbrothers-anchors {
+        width: 100%;
+    }
+    
+    .devbrothers-anchors-sticky {
+        position: static;
+    }
+    
+    .devbrothers-anchors-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 782px) {
+    .devbrothers-wrapper {
+        flex-direction: column;
+        margin: -20px 0 -10px 0;
+    }
+    
+    .devbrothers-sidebar {
+        width: 100%;
+    }
+    
+    .devbrothers-content {
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .devbrothers-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .devbrothers-info-blocks {
+        grid-template-columns: 1fr;
+    }
+    
+    .devbrothers-plugins-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
