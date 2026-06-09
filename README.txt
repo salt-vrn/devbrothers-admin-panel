@@ -3,7 +3,7 @@ Contributors: lzolotarev
 Tags: admin, management, dashboard, plugins, settings
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -50,6 +50,11 @@ Current plugins in the DevBrothers ecosystem:
 3. DevBrothers left navigation menu
 
 == Changelog ==
+
+= 1.0.1 =
+* Updated code for WordPress 7.0 compatibility
+* Security and performance improvements
+
 
 = 1.0.0 =
 * Initial release

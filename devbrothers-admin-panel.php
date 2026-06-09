@@ -3,7 +3,7 @@
  * Plugin Name: DevBrothers Admin Panel
  * Plugin URI: https://devbrothers.ru/admin-panel/
  * Description: Centralized admin panel for all DevBrothers plugins. Single access point for settings, information, and management of the plugin ecosystem.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: DevBrothers
  * Author URI: https://devbrothers.ru
  * License: GPL v2 or later
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DEVBROTHERS_VERSION', '1.0.0');
+define('DEVBROTHERS_VERSION', '1.0.1');
 define('DEVBROTHERS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DEVBROTHERS_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DEVBROTHERS_PLUGIN_BASENAME', plugin_basename(__FILE__));
