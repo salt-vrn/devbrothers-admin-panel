@@ -121,9 +121,9 @@ return [
         'status'      => 'coming-soon',
     ],
     [
-        'id'          => 'disable-comments',
-        'slug'        => 'devbrothers-disable-comments',
-        'name'        => __('Disable Comments', 'devbrothers-admin-panel'),
+        'id'          => 'no-comments',
+        'slug'        => 'devbrothers-no-comments',
+        'name'        => __('No Comments', 'devbrothers-admin-panel'),
         'description' => __('Полное отключение комментариев на сайте', 'devbrothers-admin-panel'),
         'icon'        => 'dashicons-admin-comments',
         'source'      => 'coming-soon',

@@ -13,8 +13,8 @@
         $('.devbrothers-anchor-link').on('click', function(e) {
             e.preventDefault();
 
-            var targetId = $(this).attr('href');
-            var $target = $(targetId);
+            var targetId = $(this).attr('data-anchor');
+            var $target = $(document.getElementById(targetId));
 
             if ($target.length) {
                 $('.devbrothers-anchor-link').removeClass('active');
@@ -43,7 +43,9 @@
 
                     if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                         $anchors.removeClass('active');
-                        $('a[href="#' + sectionId + '"]').addClass('active');
+                        $anchors.filter(function() {
+                            return $(this).attr('data-anchor') === sectionId;
+                        }).addClass('active');
                     }
                 });
             });

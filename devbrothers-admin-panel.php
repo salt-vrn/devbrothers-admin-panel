@@ -3,7 +3,7 @@
  * Plugin Name: DevBrothers Admin Panel
  * Plugin URI: https://devbrothers.ru/admin-panel/
  * Description: Centralized admin panel for all DevBrothers plugins. Single access point for settings, information, and management of the plugin ecosystem.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: DevBrothers
  * Author URI: https://devbrothers.ru
  * License: GPL v2 or later
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DEVBROTHERS_VERSION', '1.0.2');
+define('DEVBROTHERS_VERSION', '1.0.3');
 define('DEVBROTHERS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DEVBROTHERS_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DEVBROTHERS_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -89,7 +89,8 @@ class DevBrothers_Admin_Panel {
             $plugin['name_ru'] = $plugin['name'];
         }
 
-        if (empty($plugin['id']) || empty($plugin['name'])) {
+        if (!is_string($plugin['id']) || !preg_match('/\A[a-z0-9_-]+\z/', $plugin['id'])
+            || !is_string($plugin['name']) || trim($plugin['name']) === '') {
             return false;
         }
 
@@ -132,10 +133,11 @@ class DevBrothers_Admin_Panel {
         );
 
         foreach ($this->registered_plugins as $plugin) {
+            $menu_name = esc_html($plugin['name']);
             add_submenu_page(
                 'devbrothers',
-                $plugin['name'],
-                $plugin['name'],
+                $menu_name,
+                $menu_name,
                 'manage_options',
                 'devbrothers-plugin-' . $plugin['id'],
                 function () use ($plugin) {
